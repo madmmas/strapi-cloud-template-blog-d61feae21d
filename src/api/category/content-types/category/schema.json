@@ -13,19 +13,33 @@
   "pluginOptions": {},
   "attributes": {
     "name": {
-      "type": "string"
+      "type": "string",
+      "required": true,
+      "maxLength": 100
     },
     "slug": {
-      "type": "uid"
+      "type": "string",
+      "required": true,
+      "maxLength": 100,
+      "unique": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image_url": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "post_count": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     },
     "articles": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::article.article",
       "mappedBy": "category"
-    },
-    "description": {
-      "type": "text"
     }
   }
 }
