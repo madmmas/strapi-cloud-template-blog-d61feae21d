@@ -13,21 +13,50 @@
   "pluginOptions": {},
   "attributes": {
     "title": {
-      "type": "string"
-    },
-    "description": {
-      "type": "text",
-      "maxLength": 500
+      "type": "string",
+      "required": true,
+      "maxLength": 255
     },
     "slug": {
-      "type": "uid",
-      "targetField": "title"
+      "type": "string",
+      "required": true,
+      "maxLength": 255,
+      "unique": true
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "content": {
+      "type": "text",
+      "maxLength": 500,
+      "required": true
+    },
+    "featured_image": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "post_type": {
+      "type": "string",
+      "required": true,
+      "maxLength": 50,
+      "default": "standard"
+    },
+    "status": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20,
+      "default": "draft"
     },
     "cover": {
       "type": "media",
       "multiple": false,
       "required": false,
       "allowedTypes": ["images", "files", "videos"]
+    },
+    "views": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     },
     "author": {
       "type": "relation",
@@ -39,6 +68,12 @@
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::category.category",
+      "inversedBy": "articles"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
       "inversedBy": "articles"
     },
     "blocks": {
