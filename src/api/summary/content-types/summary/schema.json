@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "summaries",
+  "info": {
+    "singularName": "summary",
+    "pluralName": "summaries",
+    "displayName": "Summary",
+    "description": "Create summary articles with sources"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "content": {
+      "type": "richtext",
+      "required": true
+    },
+    "sources": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.source"
+    },
+    "publishAt": {
+      "type": "datetime"
+    }
+  }
+}
