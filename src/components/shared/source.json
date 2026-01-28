@@ -1,6 +1,7 @@
 {
   "collectionName": "components_shared_source",
   "info": {
+    "name": "Source",
     "displayName": "Source",
     "icon": "link"
   },
