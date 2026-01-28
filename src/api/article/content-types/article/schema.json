@@ -27,8 +27,7 @@
       "type": "text"
     },
     "content": {
-      "type": "text",
-      "maxLength": 500,
+      "type": "richtext",
       "required": true
     },
     "featured_image": {
