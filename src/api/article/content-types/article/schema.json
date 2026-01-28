@@ -36,7 +36,6 @@
     },
     "post_type": {
       "type": "string",
-      "required": true,
       "maxLength": 50,
       "default": "standard"
     },
@@ -54,7 +53,6 @@
     },
     "views": {
       "type": "integer",
-      "required": true,
       "default": 0
     },
     "author": {
